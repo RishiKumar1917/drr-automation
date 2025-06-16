@@ -1,0 +1,3 @@
+I automated the process of taking Daily Reflection Reports (DRR) from interns using Google Sheets. Took their personal Gmail so only they could edit their assigned tables. Made one sheet for admin to track everything and one for interns. Each intern has their own table with non-editable headings for better structure and data integrity.
+
+
