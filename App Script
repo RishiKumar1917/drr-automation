@@ -1,0 +1,40 @@
+function autoAddRows() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet(); // uses currently active sheet
+  const lastRow = sheet.getLastRow();
+  const totalRows = sheet.getMaxRows();
+
+  const rowsNeeded = 10; // How many new rows to add
+  const buffer = 5; // If only 5 rows left, then add more
+
+  if ((totalRows - lastRow) <= buffer) {
+    sheet.insertRowsAfter(totalRows, rowsNeeded);
+    Logger.log(`Added ${rowsNeeded} rows.`);
+  } else {
+    Logger.log("Enough rows available. No new rows added.");
+  }
+}
+
+
+function markPermanentAttendance() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const dataRange = sheet.getRange("A2:K");
+  const data = dataRange.getValues();
+  const attendanceCol = 12; // Column L = 12
+
+  for (let i = 0; i < data.length; i++) {
+    const row = data[i];
+
+    // Stop if the row is completely blank
+    if (row.every(cell => cell === "")) break;
+
+    // Check if all A to K are filled
+    const allFilled = row.every(cell => cell !== "");
+
+    // Check if attendance cell is empty
+    const currentAttendance = sheet.getRange(i + 2, attendanceCol).getValue();
+
+    if (allFilled && currentAttendance === "") {
+      sheet.getRange(i + 2, attendanceCol).setValue("Present");
+    }
+  }
+}
