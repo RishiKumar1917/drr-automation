@@ -1,0 +1,49 @@
+## =QUERY({Sheet1!A2:K10000; Sheet2!A2:K10000}, "select * where Col11 is not null")
+If:
+
+B1 = https://docs.google.com/spreadsheets/d/1ABC123xyz456...
+
+K2 = Sheet1
+
+Then the formula becomes:
+=IMPORTRANGE("https://docs.google.com/spreadsheets/d/1ABC123xyz456...", "Sheet1!A1:K")
+For 
+=QUERY({
+  {"--- ANUJA KOTNALA ---", "", "", "", "", "", "", "", "", "", ""};
+  IMPORTRANGE("link, "ANUJA KOTNALA!A2:K10000");
+
+  {"--- BHAVYA SINGH ---", "", "", "", "", "", "", "", "", "", ""};
+  IMPORTRANGE("link", "BHAVYA SINGH!A2:K10000");
+
+  {"--- GAURAV TEWARI ---", "", "", "", "", "", "", "", "", "", ""};
+  IMPORTRANGE("link", "GAURAV TEWARI!A2:K10000");
+
+  {"--- HIMANSHU POKHRIYAL ---", "", "", "", "", "", "", "", "", "", ""};
+  IMPORTRANGE("link", "HIMANSHU POKHRIYAL!A2:K10000");
+
+  {"--- KASHYAPEE ANCHLA ---", "", "", "", "", "", "", "", "", "", ""};
+  IMPORTRANGE("link"/edit", "KASHYAPEE ANCHLA!A2:K10000");
+
+  {"--- SWARDNIM GOEL ---", "", "", "", "", "", "", "", "", "", ""};
+  IMPORTRANGE("link", "SWARDNIM GOEL!A2:K10000")
+}, "select * where Col1 is not null or Col1 contains '---'")
+
+## Smart Attendance Logic
+One more key thing I did —
+Interns are marked present only if they fill out all the required columns for that day.
+
+## Why?
+Because just opening the sheet isn’t enough.
+They need to actively reflect and complete the report properly.
+It’s not about just logging in — it’s about participation and responsibility.
+
+## How?
+=ARRAYFORMULA(
+  IF(ROW(A:A)=1, "Attendance",
+    IF(A2:A="", "",
+      IF((LEN(A2:A)>0)*(LEN(B2:B)>0)*(LEN(C2:C)>0)*(LEN(D2:D)>0)*(LEN(E2:E)>0)*(LEN(F2:F)>0)*(LEN(G2:G)>0)*(LEN(H2:H)>0)*(LEN(I2:I)>0)*(LEN(J2:J)>0)*(LEN(K2:K)>0),
+      "Present",
+      "Incomplete")
+    )
+  )
+)
