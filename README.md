@@ -15,4 +15,4 @@ Intern Sheet – individual access for interns to fill their DRR daily.
 For a better user experience, I made a separate table for each intern.
 To maintain structure, headings are non-editable — interns can only write in the specified columns.
 
-## Automated Daily Reflection Report system using Google Sheets and Apps Script. Ensures authenticated intern inputs, admin overview, and structured data tracking.
+## Automated Daily Reflection Report system using Google Sheets and Apps Script. Ensures authenticated intern inputs, admin overview, and structured data tracking....
