@@ -1,4 +1,4 @@
-# drr-automation
+# drr-automation using Google Tools
 Automates intern DRR collection using Google Sheets &amp; Apps Script with secure access.  
 Daily report automation tool for teams with Gmail-authenticated edit access.  
 Scripted DRR tracker with intern sheets and admin dashboard on Google Sheets.
@@ -15,4 +15,4 @@ Intern Sheet – individual access for interns to fill their DRR daily.
 For a better user experience, I made a separate table for each intern.
 To maintain structure, headings are non-editable — interns can only write in the specified columns.
 
-## Automated Daily Reflection Report system using Google Sheets and Apps Script. Ensures authenticated intern inputs, admin overview, and structured data tracking.
+## Automated Daily Reflection Report system using Google Sheets and Apps Script. Ensures authenticated intern inputs, admin overview, and structured data tracking....
